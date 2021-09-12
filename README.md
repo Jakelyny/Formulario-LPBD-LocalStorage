@@ -7,7 +7,7 @@
 * Alteração/Validação formulário;
 * Remoção.
 
-### Adição de validação manual e armazenamento por localStorage
+##### Adição de validação manual e armazenamento por localStorage
 
 ## Link da Tabela
 * https://jakelyny.github.io/Formulario-LPBD/
