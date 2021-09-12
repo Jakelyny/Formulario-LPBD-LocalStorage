@@ -10,4 +10,4 @@
 ##### Adição de validação manual e armazenamento por localStorage
 
 ## Link da Tabela
-* https://jakelyny.github.io/Formulario-LPBD/
+* https://jakelyny.github.io/Formulario-LPBD-LocalStorage/
