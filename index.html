@@ -19,7 +19,7 @@
     <img src="banner.png" alt="Papel de parede com o símbolo das duas equipes">
     <div id="app" class="container">
         <div class="style">
-            <h2>LISTAGEM DE ARMAS</h2>
+            <h2>Listagem de armas</h2>
 
             <table class="table table-striped">
                 <tr>
@@ -47,7 +47,7 @@
         </div>
         <form id="formulario" class="colorFonts">
             <hr>
-            <h3>FORMULÁRIO PARA CADASTRAR NOVAS ARMAS</h3>
+            <h3>Formulário para cadastrar novas armas</h3>
             <hr>
             <!-- Surgirá caso ocora alguma falha no cadastro para que ocorra a inserção correta-->
             <p v-if="errors.length">
@@ -65,8 +65,8 @@
             <!-- Input do código, no mínimo necessário inserir dois dígitos e no máximo 5, do tipo number com uma verificação para não permitir a passagem de letras-->
             <div class="form-group">
                 <label for="inputCodigo">Código:</label>
-                <input type="number" minlength="2" maxlength="5" v-model="form_arma.codigoArma" class="form-control"
-                    @input="checknum" id="inputCodigoArma" required placeholder="Ex: 243">
+                <input type="text" minlength="2" maxlength="5" v-model="form_arma.codigoArma" @input="checkCodigo"
+                    class="form-control" id="inputCodigoArma" required placeholder="Ex: 243">
             </div>
 
             <!-- Input do nome, no mínimo necessário inserir dois dígitos e no máximo 12, do tipo text pois existe nome de armas com números e letras-->
@@ -79,8 +79,8 @@
             <!-- Input do preço, no mínimo necessário inserir quatro dígitos e no máximo 10, do tipo number com uma verificação para não permitir a passagem de letras-->
             <div class="form-group">
                 <label for="inputPreco">Preço:</label>
-                <input type="number" minlength="4" maxlength="10" v-model="form_arma.preco" class="form-control"
-                    id="inputPreco" @input="checknum" required placeholder="Ex: 2700,00 (acima de R$200,00)">
+                <input type="text" minlength="4" maxlength="10" v-model="form_arma.preco" @input="checkPreco"
+                    class="form-control" id="inputPreco" required placeholder="Ex: 2700,00 (acima de R$200,00)">
             </div>
 
             <!-- Select do tipo de arma utilizando um v-for que percorrer entre as opções cadastradas utilizando o t-->
@@ -263,14 +263,17 @@
                 },
 
                 //função responsável em deixar somente a passagem de números, ambas fazem suas funções, porém apresentam erro no console, mesmo fazendo sua função...
-                checknum: function (event) {
-                    
-                    if(this.form_arma.codigoArma){
-                        this.form_arma.codigoArma = this.form_arma.codigoArma.replace(/[^0-9]/g, '');
-                    }else{
-                        this.form_arma.preco = this.form_arma.preco.replace(/[^0-9]/g, '');
-                    }
+                checkCodigo: function (event) {
+
+                    this.form_arma.codigoArma = this.form_arma.codigoArma.replace(/[^0-9]/g, '');
+
                 },
+                checkPreco: function (event) {
+
+                    this.form_arma.preco = this.form_arma.preco.replace(/[^0-9]/g, '');
+
+                },
+
             },
         });
     });

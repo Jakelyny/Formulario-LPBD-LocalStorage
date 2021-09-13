@@ -23,15 +23,19 @@ li {
 h2 {
     text-align: center;
     text-transform: uppercase;
+    font-weight: bold;
     letter-spacing: 4px;
     color: #252b29;
     padding: 0.5%;
+    text-decoration: none;
 }
 
 h3 {
     text-align: center;
     text-transform: uppercase;
+    font-weight: bold;
     letter-spacing: 4px;
+    text-decoration: none;
 }
 
 .colorFonts {
